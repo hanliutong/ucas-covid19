@@ -67,7 +67,7 @@ def submit(s: requests.Session, old: dict):
         'szgj': old['szgj'],
         'old_sfzx': old['sfzx'],
         'sfzx': old['sfzx'],
-        'szdd': old['szdd'],
+        'szdd': "国内",
         'ismoved': 0,  # 如果前一天位置变化这个值会为1，第二天仍然获取到昨天的1，而事实上位置是没变化的，所以置0
         # 'ismoved': old['ismoved'],
         'tw': old['tw'],
@@ -84,7 +84,7 @@ def submit(s: requests.Session, old: dict):
         'sfcyglq': old['sfcyglq'],
         'gllx': old['gllx'],
         'sfcxzysx': old['sfcxzysx'],
-        'old_szdd': old['szdd'],
+        'old_szdd': "国内",
         'geo_api_info': old['old_city'],  # 保持昨天的结果
         'old_city': old['old_city'],
         'geo_api_infot': old['geo_api_infot'],
@@ -100,9 +100,9 @@ def submit(s: requests.Session, old: dict):
         'jcjgqk': old['jcjgqk'],
         'jcwhryfs': old['jcwhryfs'],
         'jchbryfs': old['jchbryfs'],
-        'gtshcyjkzt': old['gtshcyjkzt'],  # add @2020.9.16
-        'jrsfdgzgfxdq': old['jrsfdgzgfxdq'],  # add @2020.9.16
-        'jrsflj': old['jrsflj'],  # add @2020.9.16
+        'gtshcyjkzt': "正常",  # add @2020.9.16
+        'jrsfdgzgfxdq': "否",  # add @2020.9.16
+        'jrsflj': "否",  # add @2020.9.16
         'app_id': 'ucas'}
 
     r = s.post("https://app.ucas.ac.cn/ncov/api/default/save", data=new_daily)
